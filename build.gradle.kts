@@ -1,6 +1,6 @@
 plugins {
-    id("fabric-loom") version "0.9.45"
-    id("io.github.juuxel.loom-quiltflower") version "1.2.1"
+    id("fabric-loom") version "0.10.+"
+    id("io.github.juuxel.loom-quiltflower-mini") version "1.1.0"
     `maven-publish`
 }
 
@@ -39,6 +39,10 @@ java {
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.release.set(16)
+}
+
+quiltflower {
+    addToRuntimeClasspath.set(true)
 }
 
 tasks.jar {
